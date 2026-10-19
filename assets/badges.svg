@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="229" height="28" viewBox="0 0 229 28" role="img" aria-label="Windows 10/11, C#, MIT">
+  <rect x="0" width="121" height="28" rx="6" fill="#1f6feb"/>
+  <text x="60.5" y="18.4" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">Windows 10/11</text>
+  <rect x="129" width="42" height="28" rx="6" fill="#8250df"/>
+  <text x="150.0" y="18.4" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">C#</text>
+  <rect x="179" width="50" height="28" rx="6" fill="#2ea043"/>
+  <text x="204.0" y="18.4" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle">MIT</text>
+</svg>
