@@ -21,9 +21,13 @@ that do not provide ADLX are unsupported; update to the current Radeon driver
 for the target PC. A copied `monitor.txt` is automatically ignored when its
 display ID is not present on the new PC.
 
+## Install
+
+Download `AmdScalingTray.exe` from [Releases](https://github.com/ykyritsis/amd-scaling-hotkeys/releases) and run it. There is no installer and no runtime dependency beyond the Radeon driver. Build artefacts are not committed to the repository.
+
 ## Run
 
-Double-click `Start AMD Scaling Hotkeys.cmd`. The program lives in the notification area. Right-click its orange **A** icon to select a monitor or exit.
+The program lives in the notification area. Right-click its orange **A** icon to select a monitor or exit.
 
 For an application to use the selected GPU scaling mode, it normally needs to
 run in **exclusive fullscreen** at a resolution different from the monitor's
@@ -33,9 +37,30 @@ effect. Switching modes can briefly flicker the display.
 
 If more than one monitor is attached, use the tray menu or run `AmdScaling.exe list` to identify a display ID.
 
+## Command line
+
+`AmdScaling.exe` is the diagnostic console build and also works headlessly, which is handy for scripts and for diagnosing a display that refuses a mode:
+
+```
+AmdScaling.exe list          # displays and their IDs
+AmdScaling.exe center
+AmdScaling.exe stretch
+AmdScaling.exe aspect
+AmdScaling.exe cycle
+AmdScaling.exe tray
+```
+
+With more than one monitor attached, target a specific display with the ID reported by `list`:
+
+```
+AmdScaling.exe aspect --display DISPLAY_ID_FROM_LIST
+```
+
+Keep `AmdScaling.exe` and `Start AMD Scaling Hotkeys.cmd` together if you run from a checkout. If `list` still reports Center after a mode command, the display or driver did not accept that mode.
+
 ## Build
 
-Run `build.cmd` with the .NET Framework C# compiler. It produces a diagnostic console build (`AmdScaling.exe`) and a windowless tray build (`AmdScalingTray.exe`).
+Run `build.cmd` with the .NET Framework C# compiler. It compiles the single `Scaling.cs` twice — once as a diagnostic console build (`AmdScaling.exe`) and once as a windowless tray build (`AmdScalingTray.exe`). Both are gitignored; publish them as release assets rather than committing binaries.
 
 ## License
 
