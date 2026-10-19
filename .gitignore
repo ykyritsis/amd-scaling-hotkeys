@@ -1,3 +1,4 @@
 monitor.txt
 *.pdb
 *.obj
+*.exe
